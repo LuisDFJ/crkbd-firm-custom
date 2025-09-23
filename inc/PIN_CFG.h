@@ -14,8 +14,8 @@
 #define ROW2_PIN 6
 #define ROW3_PIN 7
 
-#define TRRS_XXX_PIN 0
-#define TRRS_YYY_PIN 1
+#define WS2812_PIN  0
+#define TRRS_PIN 1
 
 #define OLED_SDA_PIN 2
 #define OLED_SCL_PIN 3

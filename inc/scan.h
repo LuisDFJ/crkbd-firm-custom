@@ -7,3 +7,6 @@
 
 void scan_matrix( void );
 bool read_scan_register( uint8_t r, uint8_t c );
+
+void set_scan_register( uint32_t reg );
+uint32_t get_scan_register( void );

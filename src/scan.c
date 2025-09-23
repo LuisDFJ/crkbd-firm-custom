@@ -40,3 +40,11 @@ void write_scan_register( uint8_t r, uint8_t c, bool val ){
         scanned_register &= ~mask;
     }
 }
+
+void set_scan_register( uint32_t reg ){
+    scanned_register = reg;
+}
+
+uint32_t get_scan_register( void ){
+    return scanned_register;
+}

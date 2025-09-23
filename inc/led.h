@@ -6,7 +6,6 @@
 #include "scan.h"
 
 #define NUM_PIXELS  27
-#define WS2812_PIN  0
 #define NPIX        0xFF
 #define NUM_BACK    6
 
