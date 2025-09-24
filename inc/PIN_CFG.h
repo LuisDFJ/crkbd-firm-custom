@@ -1,5 +1,7 @@
 #pragma once
 
+#define BAUD_RATE 115200
+
 #define LED_PIN  17
 
 #define COL0_PIN 20

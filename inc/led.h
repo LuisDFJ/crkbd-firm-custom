@@ -1,7 +1,7 @@
 #pragma once
 
-#include "hardware/pio.h"
-#include "ws2812.pio.h"
+#include "pio/ws2812.pio.h"
+#include "pio/pio.h"
 #include "PIN_CFG.h"
 #include "scan.h"
 
@@ -24,12 +24,4 @@ extern const uint8_t mapped_leds_back[NUM_BACK];
 extern const uint8_t mapped_leds_keys[MATRIX_ROWS][MATRIX_COLS];
 extern uint32_t pixels[NUM_PIXELS];
 
-typedef struct {
-    PIO pio;
-    uint sm;
-    uint offset;
-}pio_t;
-
-pio_t init_pio   ( void );
-void  clear_pio  ( pio_t p );
-void  draw_matrix( pio_t p );
+void  draw_matrix ( void );
