@@ -4,6 +4,9 @@ add_library(crkbd_src_left
     scan.c
     serial.c
     usb/usb_descriptors.c
+    usb/usb_hid.c
+    usb/usb_hid_cb.c
+    keyboard.c
     pio/pio.c
 )
 
@@ -17,6 +20,9 @@ add_library(crkbd_src_right
     scan.c
     serial.c
     usb/usb_descriptors.c
+    usb/usb_hid.c
+    usb/usb_hid_cb.c
+    keyboard.c
     pio/pio.c
 )
 

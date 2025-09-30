@@ -1,6 +1,6 @@
 //#include "bsp/board_api.h"
 #include "tusb.h"
-#include "usb_descriptors.h"
+#include "usb_hid.h"
 
 #define _PID_MAP(itf, n)  ( (CFG_TUD_##itf) << (n) )
 #define USB_PID           (0x4000 | _PID_MAP(CDC, 0) | _PID_MAP(MSC, 1) | _PID_MAP(HID, 2) | \
@@ -136,9 +136,9 @@ uint16_t const *tud_descriptor_string_cb(uint8_t index, uint16_t langid) {
       chr_count = 1;
       break;
 
-    case STRID_SERIAL:
-      chr_count = board_usb_get_serial(_desc_str + 1, 32);
-      break;
+    //case STRID_SERIAL:
+      //chr_count = board_usb_get_serial(_desc_str + 1, 32);
+      //break;
 
     default:
       if ( !(index < sizeof(string_desc_arr) / sizeof(string_desc_arr[0])) ) return NULL;

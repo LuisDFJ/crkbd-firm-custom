@@ -16,3 +16,4 @@
 
 void init_serial( void );
 void serial_task( void );
+uint32_t get_scan_register_left( void );

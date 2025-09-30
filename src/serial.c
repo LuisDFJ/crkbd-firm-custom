@@ -2,6 +2,10 @@
 
 uint32_t scanned_register_left = 0x0000;
 
+uint32_t get_scan_register_left( void ){
+    return scanned_register_left;
+}
+
 void uart_rx_irq() {
     uint8_t reg[4] = {0,0,0,0};
     for( int i = 0; i < 4; i++ ){
@@ -28,13 +32,12 @@ void init_serial( void ){
 #endif
 }
 
-
 void serial_task( void ){
 #ifdef SPLIT_LEFT
     uart_tx_reg( get_scan_register() );
 #endif
-#ifdef SPLIT_RIGHT
-    set_scan_register(scanned_register_left | get_scan_register());
-#endif
+//#ifdef SPLIT_RIGHT
+//    set_scan_register(scanned_register_left | get_scan_register());
+//#endif
 }
 

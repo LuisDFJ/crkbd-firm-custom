@@ -19,7 +19,7 @@ pico_generate_pio_header(crkbd_right ${CMAKE_CURRENT_LIST_DIR}/src/pio/uart_tx.p
 target_link_libraries(crkbd_right pico_bootsel_via_double_reset)
 target_link_libraries(crkbd_right crkbd_src_right)
 
-#pico_enable_stdio_usb(crkbd_right 1)
+pico_enable_stdio_usb(crkbd_right 1)
 target_sources(crkbd_right PRIVATE main.c)
 
 pico_add_extra_outputs(crkbd_right)
@@ -32,7 +32,7 @@ pico_generate_pio_header(crkbd_left ${CMAKE_CURRENT_LIST_DIR}/src/pio/uart_tx.pi
 target_link_libraries(crkbd_left pico_bootsel_via_double_reset)
 target_link_libraries(crkbd_left crkbd_src_left)
 
-#pico_enable_stdio_usb(crkbd_left 1)
+pico_enable_stdio_usb(crkbd_left 1)
 target_sources(crkbd_left PRIVATE main.c)
 
 pico_add_extra_outputs(crkbd_left)
