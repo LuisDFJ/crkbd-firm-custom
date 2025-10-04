@@ -1,4 +1,5 @@
 #include "keyboard.h"
+#include "keymap/keymap.h"
 
 bool keyboard_parse( uint8_t keycodes[6], uint8_t *modifier ){
     uint32_t right = get_scan_register();
@@ -10,4 +11,32 @@ bool keyboard_parse( uint8_t keycodes[6], uint8_t *modifier ){
         return true;
     }
     return false;
+}
+
+uint8_t get_keycode_left( int i, int l ){
+     
+    keymaps[l][0][]
+
+}
+
+int get_layer( uint32_t l_reg, uint32_t r_reg ){
+    int layer = 0;
+    while( l_reg ){
+        int i = __builtin_ctz( l_reg );
+        l_reg &= l_reg - 1;
+        if( IS_LAYER_KC(  ) )
+
+    }
+
+    return layer;
+}
+
+void get_pressed( uint32_t l_reg, uint32_t r_reg, uint8_t keycodes[6] ){
+    int c = 0;
+    int layer
+    while( l_reg && c < 6 ){
+        keycodes[c++] = keymap_parse_left( i );
+
+
+    }
 }

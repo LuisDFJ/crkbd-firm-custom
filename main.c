@@ -37,7 +37,6 @@ int main() {
             serial_task();
             draw_matrix();
             hid_task();
-            //sleep_ms(10);
         }
     }
 
