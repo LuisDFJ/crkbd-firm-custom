@@ -350,14 +350,17 @@ enum keycodes_enum {
     KC_LAY4    = KC_LAYER_4,
 };
 
-#define IS_SPECIAL_KC (code) ((code) >= KC_NO && (code) <= KC_TRANSPARENT)
-#define IS_BASIC_KC   (code) ((code) >= KC_A && (code) <= KC_EXSEL)
-#define IS_SYSTEM_KC  (code) ((code) >= KC_SYSTEM_POWER && (code) <= KC_SYSTEM_WAKE)
+#define IS_SPECIAL_KC(code) ((code) >= KC_NO && (code) <= KC_TRANSPARENT)
+#define IS_BASIC_KC(code) ((code) >= KC_A && (code) <= KC_EXSEL)
+#define IS_SYSTEM_KC(code) ((code) >= KC_SYSTEM_POWER && (code) <= KC_SYSTEM_WAKE)
 #define IS_MODIFIER_KC(code) ((code) >= KC_LEFT_CTRL && (code) <= KC_RIGHT_GUI)
-#define IS_LAYER_KC   (code) ((code) >= KC_LAYER_1 && (code) <= KC_LAYER_4)
+#define IS_LAYER_KC(code) ((code) >= KC_LAYER_1 && (code) <= KC_LAYER_4)
 
 #define SPECIAL_KC_RANGE  KC_NO ... KC_TRANSPARENT
 #define BASIC_KC_RANGE    KC_A ... KC_EXSEL
 #define SYSTEM_KC_RANGE   KC_SYSTEM_POWER ... KC_SYSTEM_WAKE
 #define MODIFIER_KC_RANGE KC_LEFT_CTRL ... KC_RIGHT_GUI
 #define LAYER_KC_RANGE    KC_LAYER_1 ... KC_LAYER_4
+
+#define LAYER_NUM(layer) ((layer) - KC_LAYER_1 + 1 )
+#define MODIFIER_CODE(code) (1UL << (code - KC_LEFT_CTRL))
